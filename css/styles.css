@@ -1,0 +1,250 @@
+/** BASE STYLES **/
+
+body, button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: hsl(233, 13%, 49%);
+    margin: 30px 0 33px;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+/** BODY STYLES **/
+
+.container {
+    background: url(../images/bg-top.svg) right top no-repeat;
+    background-color: hsl(236, 72%, 79%, 0.1);
+    background-blend-mode: multiply;
+    min-width: 375px;
+    padding: 20px;
+}
+
+/* Toggle */
+
+.plan-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-frequency li {
+    display: inline-block;
+    color: hsl(234, 14%, 74%);
+    margin: 0 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px hsl(237, 63%, 64%);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.toggle {
+    position: relative;
+    top: -6px;
+}
+
+/* Cards */
+
+.plan-choices {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.card-white {
+    background: #fff;
+    color: hsl(232, 13%, 33%);
+}
+
+.card-purple {
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+}
+
+.card-white, .card-purple {
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 20px;
+    min-width: 280px;
+}
+
+.dollar {
+    font-size: 2rem;
+    padding: 7px;
+    position: relative;
+    top: -7px;
+}
+
+.price {
+    font-size: 3.5rem;
+    margin: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.features li {
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+    padding: 18px;
+}
+
+.features li:first-child {
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+button {
+    border-radius: 8px;
+    padding: 14px;
+    margin: 32px 0 16px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition-duration: 0.4s;
+}
+
+.card-white button {
+    color: #fff;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border: 1px solid hsl(236, 72%, 79%);
+}
+
+.card-purple button {
+    color: hsl(237, 63%, 64%);
+    background: #fff;
+    border: 1px solid #fff;
+}
+  
+.card-white button:hover {
+    color: hsl(237, 63%, 64%);
+    background: #fff;
+    cursor: pointer;
+}
+
+.card-purple button:hover {
+    color: #fff;
+    background-color: hsl(237, 63%, 64%);
+    cursor: pointer;
+}
+
+/* Attribution */
+
+.attribution { 
+    font-size: 11px; text-align: center;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
+
+
+/** MEDIA QUERIES **/
+
+@media only screen and (min-width: 768px) {
+
+    .container {
+        background: url(../images/bg-top.svg) right top no-repeat, url(../images/bg-bottom.svg) left bottom no-repeat;
+        background-color: hsl(236, 72%, 79%, 0.1);
+        background-blend-mode: multiply;
+        min-width: 1200px;
+    }
+    
+    .plan-choices {
+        flex-direction: row;
+        padding: 30px 30px 100px;
+    }
+
+    .card-white, .card-purple {
+        margin: 20px 0;
+    }
+
+    .card-purple {
+        padding: 40px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .container {
+        min-width: 1440px;
+    }
+    
+}
